@@ -166,41 +166,51 @@
 # print(x, "*", x, "=", ans)
 
 
-largest = None
-
-for i in range(0, 10):
-    number = int(input('Enter a number: '))
-    if largest is None:
-        if number % 2 != 0:
-            largest = number
-    else:
-        if number % 2 != 0 and number > largest:
-            largest = number
-
-if largest is None:
-    print("You haven't typed any odd numbers.")
-else:
-    print('Largest odd number is ' + str(largest))
-
-
+# largest = None
+#
+# for i in range(0, 10):
+#     number = int(input('Enter a number: '))
+#     if largest is None:
+#         if number % 2 != 0:
+#             largest = number
+#     else:
+#         if number % 2 != 0 and number > largest:
+#             largest = number
+#
+# if largest is None:
+#     print("You haven't typed any odd numbers.")
+# else:
+#     print('Largest odd number is ' + str(largest))
 
 
 
 
+# listOfTemps = [15, 17, 20, -5, 30, 2, 9]
+# days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+# day = 0
+#
+# for temperature in listOfTemps:
+#     if day == 4:
+#         print('It is', days[day], 'suckers, I am outta here.')
+#         break
+#     print('Temperature was', temperature, 'degree Celcius on', days[day])
+#     day = day + 1
+#     if temperature <= 15:
+#         print('It was cold.')
+#     else:
+#         print('It was hot.')
 
 
 
 
+myString = "1.23, 2.4, 3.123"
+total = 0
+index = 0
+tracker = 0
 
-
-
-
-
-
-
-
-
-
-
-
-
+for character in myString:
+    if character == ',' or index == len(myString) - 1:
+        total = total + float(myString[tracker:index])
+        tracker = index + 2
+    index = index + 1
+print(total)
