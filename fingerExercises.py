@@ -33,8 +33,6 @@
 #     print(str(x) + " is odd")
 
 
-
-
 # x = int(input("write your number: "))
 # if x % 3 == 0 :
 #     if x % 2 == 0 :
@@ -101,16 +99,9 @@
 #         print('none of them are odd')
 
 
-
-
-
-
-
 # x = 10
 # y = 290
 # z = 1
-
-
 
 
 # #check if x is an odd number
@@ -155,7 +146,6 @@
 #         print("none of them are odd")
 
 
-
 # x = 6
 # ans = 0
 # iteration = x
@@ -183,8 +173,6 @@
 #     print('Largest odd number is ' + str(largest))
 
 
-
-
 # listOfTemps = [15, 17, 20, -5, 30, 2, 9]
 # days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 # day = 0
@@ -201,16 +189,196 @@
 #         print('It was hot.')
 
 
+# myString = "1.23, 2.4, 3.123"
+# total = 0
+# index = 0
+# tracker = 0
+#
+# for character in myString:
+#     if character == ',' or index == len(myString) - 1:
+#         total = total + float(myString[tracker:index])
+#         tracker = index + 2
+#     index = index + 1
+# print(total)
 
 
-myString = "1.23, 2.4, 3.123"
-total = 0
-index = 0
-tracker = 0
+# x = "987654321"
+# total = 0
+#
+# for char in x:
+#     total = total + int(char)
+#     print('The loop variable in this iteration is', char)
+# print('Total is', total)
+#
+# for i in range(len(x)):
+#     currentNumber = int(x[i])
+#     total = total + currentNumber
+# print('Total is', total)
 
-for character in myString:
-    if character == ',' or index == len(myString) - 1:
-        total = total + float(myString[tracker:index])
-        tracker = index + 2
-    index = index + 1
-print(total)
+
+# Chapter 2 page 20
+# Finger exercise: Write a program that asks the user to input 10 integers, and
+# then prints the largest odd number that was entered. If no odd number was
+# entered, it should print a message to that effect
+
+# largestOdd = None
+# for i in range(5):
+#     number = int(input("Write your number: "))
+#     if largestOdd is None:
+#         if number % 2 != 0:
+#             largestOdd = number
+#     else:
+#         if number % 2 != 0 and number > largestOdd:
+#             largestOdd = number
+#
+# if largestOdd is None:
+#     print("You haven't entered an odd number.")
+# else:
+#     print('Largest odd number is', largestOdd)
+
+
+# Chapter 2 page 20
+# Finger exercise: Write a program that asks the user to input 5 integers, and
+# then prints the smallest even number that was entered. If no even number was
+# entered, it should print a message to that effect
+
+
+# smallestEven = None
+# # set 5 iterations first
+# for i in range(5):
+#     # ask for input from user and assign them to number
+#     number = int(input("Write your even number: "))
+#     # the first time user types in an even number, there can't be any comparison so see if it's the first even number
+#     if smallestEven is None:
+#         # see if the written number is even
+#         if number % 2 == 0:
+#             # assign the smallestEven to number
+#             smallestEven = number
+#     # if it is not the first time, compare the smallestEven to the new number and see which one is smaller
+#     elif number % 2 == 0 and number < smallestEven:
+#         smallestEven = number
+#
+#
+# # if user didn't type in any even number for all rounds, give a message to that effect
+# if smallestEven is None:
+#     print("You haven't typed any even numbers.")
+# # print out the final result of the smallest even number
+# else:
+#     print("The smallest even number is " + str(smallestEven) + ".")
+
+
+# page 25
+# sum the digits in the string denoted by the literal '123456789' and prints the total.
+# a = "12345"
+# total = None
+#
+# for i in a:
+#     if total is None:
+#         total = int(i)
+#     else:
+#         total = total + int(i)
+#         print(total)
+
+
+# Finger exercise: Let s be a string that contains a sequence of decimal numbers
+# separated by commas, e.g., s = '1.23,2.4,3.123'. Write a program that prints
+# the sum of the numbers in s.
+#
+# total = 0
+# tracker = 0
+# s = "1.23, 2.4, 3.123"
+#
+# for i in range(len(s)):
+#     # realize how to get the float number
+#     if s[i] == ",":
+#         number = float(s[tracker:i])
+#         tracker = i + 2
+#         # add numbers with each other
+#         total = total + number
+#     elif i == len(s) - 1:
+#         number = float(s[tracker:i])
+#         # add numbers with each other
+#         total = total + number
+#
+# # get the final print
+# print(total)
+
+
+# total = 0
+# tracker = 0
+# s = "1.23, 2.4, 3.123"
+#
+# for i in range(len(s)):
+#     if s[i] == ",":
+#         number = float(s[tracker:i])
+#         tracker = i + 2
+#         total = total + number
+#     elif i == len(s) - 1:
+#         number = float(s[tracker:])
+#         total = total + number
+# print(total)
+
+
+# calculate the biggest number
+# biggestNum = None
+# tracker = 0
+# s = "-1.23, -2.4, -3.123"
+#
+# for i in range(len(s)):
+#     if biggestNum is None:
+#         if s[i] == ",":
+#             number = float(s[tracker:i])
+#             tracker = i + 2
+#             biggestNum = number
+#     elif s[i] == ",":
+#         number = float(s[tracker:i])
+#         tracker = i + 2
+#         if number > biggestNum:
+#             biggestNum = number
+#     else:
+#         if i == len(s) - 1:
+#             number = float(s[tracker:])
+#             if number > biggestNum:
+#                 biggestNum = number
+# print(biggestNum)
+
+
+# calculate the minus
+# s = "-1.23, -2.4, -3.123"
+# tracker = 0
+# total = None
+#
+# for i in range(len(s)):
+#     if total is None:
+#         if s[i] == ",":
+#             number = float(s[tracker:i])
+#             tracker = i + 2
+#             total = number
+#     elif s[i] == ",":
+#         number = float(s[tracker:i])
+#         tracker = i + 2
+#         total = total - number
+#     else:
+#         if i == len(s) - 1:
+#             number = float(s[tracker:])
+#             total = total - number
+# print(total)
+
+
+# Finger exercise: Write a program that asks the user to enter an integer and
+# prints two integers, root and pwr, such that 0 < pwr < 6 and root**pwr is equal
+# to the integer entered by the user. If no such pair of integers exists, it should
+# print a message to that effect.
+
+number = int(input('Enter an integer: '))
+
+for pwr in range(1, 6):
+    for r in range(abs(number) + 1):
+        if r ** pwr == abs(number):
+            if number < 0 and pwr % 2 != 0:
+                r = -r
+                print(r, 'to the power of', pwr, 'is', number)
+            elif number >= 0:
+                print(r, 'to the power of', pwr, 'is', number)
+
+
