@@ -369,16 +369,79 @@
 # prints two integers, root and pwr, such that 0 < pwr < 6 and root**pwr is equal
 # to the integer entered by the user. If no such pair of integers exists, it should
 # print a message to that effect.
+#
+# number = int(input('Enter an integer: '))
+#
+# for pwr in range(1, 6):
+#     for r in range(abs(number) + 1):
+#         if r ** pwr == abs(number):
+#             if number < 0 and pwr % 2 != 0:
+#                 r = -r
+#                 print(r, 'to the power of', pwr, 'is', number)
+#             elif number >= 0:
+#                 print(r, 'to the power of', pwr, 'is', number)
 
-number = int(input('Enter an integer: '))
 
-for pwr in range(1, 6):
-    for r in range(abs(number) + 1):
-        if r ** pwr == abs(number):
-            if number < 0 and pwr % 2 != 0:
-                r = -r
-                print(r, 'to the power of', pwr, 'is', number)
-            elif number >= 0:
-                print(r, 'to the power of', pwr, 'is', number)
+
+
+
+
+
+
+
+
+
+# number = int(input("Write your integer "))
+#
+# #define a for loop for power in range of > 0 and < 6
+# for power in range(1, 6):
+#     # define another for loop for roots
+#     for root in range(abs(number + 1)):
+#         #define the power formula being equal to number
+#         if root**power == abs(number):
+#             #define if the root gonna be +or -
+#             if number < 0 and power % 2 != 0:
+#                 root = -root
+#                 print(root, power)
+#             elif number > 0:
+#                 print(root, power)
+
+x = 25
+epsilon = 0.3
+step = epsilon**2
+numGuesses = 0
+ans = 0.0
+while abs(ans**2 - x) >= epsilon and ans <= x:
+    ans += step
+    numGuesses += 1
+print('numGuesses =', numGuesses)
+if abs(ans**2 - x) >= epsilon:
+    print('Failed on square root of', x)
+else:
+    print(ans, 'is close to square root of', x)
+
+
+# What would have to be changed to make the code in Figure
+# 3.4 work for finding an approximation to the cube root of both negative and
+# positive numbers? (Hint: think about changing low to ensure that the answer
+# lies within the region being searched.)
+
+# x = 25
+# epsilon = 0.01
+# numGuesses = 0
+# low = 0.0
+# high = max(1.0, x)
+# ans = (high + low)/2.0
+# while abs(ans**2 - x) >= epsilon:
+#     print('low =', low, 'high =', high, 'ans =', ans)
+#     numGuesses += 1
+#     if ans**2 < x:
+#         low = ans
+#     else:
+#         high = ans
+#     ans = (h + low)/2.0
+# print('numGuesses =', numGuesses)
+# print(ans, 'is close to square root of', x)hig
+
 
 
