@@ -173,22 +173,6 @@
 #     print('Largest odd number is ' + str(largest))
 
 
-# listOfTemps = [15, 17, 20, -5, 30, 2, 9]
-# days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-# day = 0
-#
-# for temperature in listOfTemps:
-#     if day == 4:
-#         print('It is', days[day], 'suckers, I am outta here.')
-#         break
-#     print('Temperature was', temperature, 'degree Celcius on', days[day])
-#     day = day + 1
-#     if temperature <= 15:
-#         print('It was cold.')
-#     else:
-#         print('It was hot.')
-
-
 # myString = "1.23, 2.4, 3.123"
 # total = 0
 # index = 0
@@ -210,9 +194,12 @@
 #     print('The loop variable in this iteration is', char)
 # print('Total is', total)
 #
+#
+# #if we add range its gonna add up indexes together from 0 to the lenght of range
 # for i in range(len(x)):
 #     currentNumber = int(x[i])
 #     total = total + currentNumber
+#     print(i)
 # print('Total is', total)
 
 
@@ -220,7 +207,7 @@
 # Finger exercise: Write a program that asks the user to input 10 integers, and
 # then prints the largest odd number that was entered. If no odd number was
 # entered, it should print a message to that effect
-
+#
 # largestOdd = None
 # for i in range(5):
 #     number = int(input("Write your number: "))
@@ -382,15 +369,6 @@
 #                 print(r, 'to the power of', pwr, 'is', number)
 
 
-
-
-
-
-
-
-
-
-
 # number = int(input("Write your integer "))
 #
 # #define a for loop for power in range of > 0 and < 6
@@ -406,32 +384,47 @@
 #             elif number > 0:
 #                 print(root, power)
 
-x = 25
-epsilon = 0.3
-step = epsilon**2
-numGuesses = 0
-ans = 0.0
-while abs(ans**2 - x) >= epsilon and ans <= x:
-    ans += step
-    numGuesses += 1
-print('numGuesses =', numGuesses)
-if abs(ans**2 - x) >= epsilon:
-    print('Failed on square root of', x)
-else:
-    print(ans, 'is close to square root of', x)
+# x = 25
+# epsilon = 0.01
+# step = epsilon**2
+# numGuesses = 0
+# ans = 0.0
+# while abs(ans**2 - x) >= epsilon and ans <= x:
+#     ans += step
+#     numGuesses += 1
+# print('numGuesses =', numGuesses)
+# if abs(ans**2 - x) >= epsilon:
+#     print('Failed on square root of', x)
+# else:
+#     print(ans, 'is close to square root of', x)
 
+
+# number = float(input("write your number : "))
+# epsilon = 0.01
+# speed = epsilon ** 2
+# numGuesses = 0
+# ans = 0
+#
+# while abs(ans ** 2 - number) >= epsilon and ans <= number:
+#     ans += speed
+#     numGuesses += 1
+# print("numGuesses is", numGuesses)
+# if abs(ans ** 2 - number) >= epsilon:
+#     print("failed")
+# else:
+#     print(ans, "is close to the root of", number)
 
 # What would have to be changed to make the code in Figure
 # 3.4 work for finding an approximation to the cube root of both negative and
 # positive numbers? (Hint: think about changing low to ensure that the answer
 # lies within the region being searched.)
 
-# x = 25
+# x = 0.5
 # epsilon = 0.01
 # numGuesses = 0
-# low = 0.0
-# high = max(1.0, x)
-# ans = (high + low)/2.0
+# low = 0
+# high = max(1, x)
+# ans = (high + low)/2
 # while abs(ans**2 - x) >= epsilon:
 #     print('low =', low, 'high =', high, 'ans =', ans)
 #     numGuesses += 1
@@ -439,9 +432,621 @@ else:
 #         low = ans
 #     else:
 #         high = ans
-#     ans = (h + low)/2.0
+#     ans = (high + low)/2
 # print('numGuesses =', numGuesses)
-# print(ans, 'is close to square root of', x)hig
+# print(ans, 'is close to square root of', x)
+
+
+# number = float(input("Write your number : "))
+# while number < 0:
+#     print("Negative numbers have no square roots, please write a non-negative number")
+#     number = float(input("Write your number : "))
+#
+# epsilon = 0.01
+# guesses = 0
+# low = 0
+# high = max(1.0, number)
+# ans = (high + low) / 2
+#
+# while abs(ans ** 2 - number) >= epsilon:
+#
+#     print("low , high and answer are :", low, ",", high, "and", ans)
+#     guesses += 1
+#     if ans ** 2 < number:
+#         low = ans
+#     else:
+#         high = ans
+#     ans = (high + low) / 2
+# print("number of guesses are :", guesses)
+# print(ans, "is the closest number to the root of", number)
+
+
+# Finger exercise: What would have to be changed to make the code in Figure
+# 3.4 work for finding an approximation to the cube root of both negative and
+# positive numbers? (Hint: think about changing low to ensure that the answer
+# lies within the region being searched.)
+
+# number = float(input("Write your number : "))
+#
+# epsilon = 0.01
+# guesses = 0
+# if number < 0:
+#     low = min(number, -1)
+# else:
+#     low = 0
+# high = max(1.0, number)
+# ans = (high + low) / 2
+#
+# while abs(ans ** 3 - number) >= epsilon:
+#     print("low , high and answer are :", low, ",", high, "and", ans)
+#     guesses += 1
+#     if ans ** 3 < number:
+#         low = ans
+#     else:
+#         high = ans
+#     ans = (high + low) / 2
+# print("number of guesses are :", guesses)
+# print(ans, "is the closest number to the cube root of", number)
+
+
+# Newton-Raphson for square root
+# Find x such that x**2 - 24 is within epsilon of 0
+
+# Global variables
+# epsilon = 0.01
+# k = 24.0
+
+
+# Newton-Rhapson
+# print('--- Newton-Rhapson algorithm ---')
+#
+# guess = k/2.0
+# iteration = 0
+# while abs(guess*guess - k) >= epsilon:
+#     guess = guess - (((guess ** 2) - k) / (2 * guess))
+#     iteration += 1
+# print("Number of guesses is", iteration)
+# print('Square root of', k, 'is about', guess)
+#
+#
+# # Binary search
+# print('--- Binary search algorithm ---')
+#
+# guesses = 0
+# low = 0
+# high = max(1.0, k)
+# ans = (high + low) / 2
+# while abs(ans ** 2 - k) >= epsilon:
+#     guesses += 1
+#     if ans ** 2 < k:
+#         low = ans
+#     else:
+#         high = ans
+#     ans = (high + low) / 2
+# print("Number of guesses is", guesses)
+# print('Square root of', k, 'is about', ans)
+
+
+# # function defination
+# def sahar(x, y):
+#     if x < y:
+#         print(x,"is smallest")
+#     else:
+#         print(x,"is biggest")
+#
+# sahar(33,5)
+
+
+# def sahar(x, y):
+#     if x < y:
+#         return x
+#     else:
+#         return y
+#
+#
+# print(sahar(3 + 4, 6))
+
+
+# Finger exercise: Write a function isIn that accepts two strings as arguments
+# and returns True if either string occurs anywhere in the other, and False
+# otherwise. Hint: you might want to use the built-in str operation in.
+
+# def isIn(str1, str2):
+#     # check which one is the smallest
+#     smallestString = min(str1, str2)
+#     # check which one is the biggest
+#     biggestString = max(str1, str2)
+#     # see if the first letter of smallest string matches any letter of biggest one
+#     for index in range(len(biggestString)):
+#         # if there is a match
+#         if smallestString[0] == biggestString[index]:
+#             # check if the smallest string is equal to the sliced part of the biggest string
+#             if smallestString == biggestString[index:index+len(smallestString)]:
+#                 return True
+#     # if the for loop finishes without returning, then it means there is no match
+#     return False
+#
+# print(isIn("sahahar", "har"))
+
+
+# def sahar(country="Iran"):
+#     print("ı am from", country)
+
+
+# def f(x):
+#     y = 1
+#     x = x + y
+#     print('x =', x)
+#     return x
+#
+#
+#
+# x = 3
+# y = 2
+# z = f(x)
+# print('z =', z)
+# print('x =', x)
+# print('y =', y)
+
+
+# def f(x):
+#     def g():
+#         x = 'abc'
+#         print('x =', x)
+#         return x
+#     def h():
+#         z = x
+#         print('z =', z)
+#
+#     x = x + 1
+#     print('x =', x)
+#     h()
+#     g()
+#     print('x =', x)
+#     return g
+# x = 3
+# z = f(x)
+# print('x =', x)
+# print('z =', z)
+# z()
+
+
+# def f():
+#     print(x)
+#
+#
+# def g():
+#     x = 1
+#     print(x)
+#
+# x = 3
+# f()
+# x = 3
+# g()
+
+
+# def getDouble(number):
+#     """Assumes number is int or float,
+#         Returns doubledNumber such that doubledNumber is two times the number
+#     double(2) ---> 4"""
+#     doubledNumber = number * 2
+#     return doubledNumber
+#
+# print(double(2))
+# help(double)
+
+
+# def fib(x):
+#     """Assumes x an int >= 0
+#     Returns Fibonacci of x"""
+#     global numFibCalls
+#     numFibCalls += 1
+#     if x == 0 or x == 1:
+#         return 1
+#     else:
+#         return fib(x - 1) + fib(x - 2)
+#
+# def testFib(n):
+#     for i in range(n + 1):
+#         global numFibCalls
+#         numFibCalls = 0
+#         print('fib of', i, '=', fib(i))
+#         print('fib called', numFibCalls, 'times.')
+#
+# testFib(4)
+
+# import os
+# os.chdir('C:\\Users\\ekin\\Desktop')
+#
+# Sahar_file = open('myDocuments.txt', 'a')
+# document = input('Enter a document: ')
+# Sahar_file.writeLines('This document is ' + document + '\n')
+# Sahar_file.close()
+#
+# Sahar_file = open('myDocuments.txt', 'r')
+# content = Sahar_file.read()
+# Sahar_file.close()
+#
+# print(content)
+
+# nameHandle = open('sahari', 'w')
+#
+# nameHandle.write("sahar" + "\n")
+# nameHandle.close()
+#
+# nameHandle = open('sahari', 'r')
+# for i in nameHandle:
+#     print(i)
+# nameHandle.close()
+#
+# nameHandle.writelines(s)
+
+# Number = int(input('write your num : '))
+# while Number % 2 == 0:
+#     Number = int(input('write your num : '))
+# print("Good job!")
+
+
+# mySum = 0
+# for number in float(range(10.5)):
+#     mySum += 1
+# print(mySum)
+
+
+# s = "abcdefgh"
+# print(s[::])
+#
+# print(len(s))
+
+# anLetters = "aeoiu"
+# #create an input for user to type a word
+# word = input("write a word for me to cheer up: ")
+# #create an input for user to type enthusiastic level in number
+# enthusiasmLevel = int(input("write your desired enthusiasm level from 1-10 : "))
+#
+#
+#
+# # create a for loop to iterate over the word
+# for character in word:
+#     # see if the character is anLetters
+#     if character.lower() in anLetters:
+#         # print it out
+#         print("give me an "+character+" ! "+character)
+#     else:
+#         print("give me a", character, "!", character)
+#
+#
+# for i in range(enthusiasmLevel):
+#     print(word+"!")
+
+
+# Number = int(input("write a number , you wanna know cube root of : "))
+# for i in range(abs(Number) + 1):
+#     if Number < 0:
+#         positiveNumber = abs(Number)
+#         if i ** 3 == positiveNumber:
+#             print( "Cube root of ",Number, "is -",i)
+#             break
+#         else:
+#             continue
+#     else:
+#         if i ** 3 == Number:
+#             print("Cube root of " +str(Number)+ " is", i)
+#             break
+#         else:
+#             continue
+#     print(Number,"doesnt have a perfect cube")
+
+# number = int(input("write a number , you wanna know cube root of : "))
+# for root in range(abs(number)+1):
+#     if root **3 == abs(number):
+#         if number < 0:
+#             root = -root
+#         print("cube root of " + str(number) + " is " + str(root))
+#         break
+#     else:
+#         if root >= abs(number):
+#             print(number,"doesn't have any cube root")
+
+
+# string = '6.00 is 6.0001 and 6.0002'
+# newString = ""
+# newString += string[-1] # '2'
+# newString += string[0:7:3] # '6'
+# newString += string[4::30] # ' '
+# newString += string[13:10:-1] # '100'
+# print(newString)
+
+
+# a1 = "i rule mit"
+# a2 = "mit u rock"
+#
+# for char_a1 in a1:
+#     for char_a2 in a2:
+#         if char_a1 == char_a2:
+#             print("common letter is ", char_a1)
+#             break
+
+
+# def remainder(number):
+#     return number % 2 == 0
+#
+# print(remainder(3))
+
+
+# def funcA():
+#     print("indide func A")
+#
+# def funcB(y):
+#     print("inside fun B")
+#     return y
+#
+# def funcC(z):
+#     print("inside func C")
+#     return z()
+#
+# print(funcA())
+# print( 5 + funcB(2))
+# print(funcC(funcA))
+
+
+#
+# def a(y):
+#     x = 1
+#     x += 1
+#     print(x)
+# x = 5
+# a(x)
+# print(x)
+
+
+# def h(x):
+#     x += 1
+#
+#
+# x = 5
+# h(x)
+# print(x)
+
+# big = 0
+# for i in range(3):
+#     number = int(input("write your number : "))
+#     if number % 2 != 0 :
+#         if number > big:
+#             big = number
+# if big == 0:
+#     print("no odd number was written")
+# else:
+#     print(big)
+
+
+# def rootFinder():
+#     number = int(input("write your number: "))
+#     positiveNumber = abs(number)
+#     for power in range(1,6):
+#         for root in range(positiveNumber):
+#             if root ** power == positiveNumber:
+#                 if number < 0:
+#                     root = - root
+#                 return print(root,"to the power of",power,"equals to:",number)
+#     print(number,"doesnt have any root in range of 1 to 6")
+#
+#
+# rootFinder()
+#
+# epsilon = 0.01
+# step = epsilon * 2
+# ans = 0
+# guess = 0
+# number = int(input("write your number : "))
+# while number < 0:
+#     number = int(input("write your number : "))
+# # assert number > 0, 'Negative number entered'
+# while ans ** 2 <= number and number - epsilon > ans and ans < number:
+#     ans += step
+#     guess += 1
+# print(ans)
+# print(guess)
+#
+#
+# epsilon = 0.01
+# guess = 0
+# number = int(input("write your number : "))
+# maxGuess = max(number, 1)
+# minGuess = min(0, number)
+# ans = (maxGuess + minGuess) / 2
+# while abs(ans ** 3 - number) >= epsilon:
+#     guess += 1
+#     if ans ** 3 < number:
+#         minGuess = ans
+#     else:
+#         maxGuess = ans
+#     ans = (maxGuess + minGuess) / 2
+# print(ans)
+# print(guess)
+
+# sahar = ()
+# for i in range(1, 20):
+#     if i % 2 == 0:
+#         sahar += (i,)
+
+# print(sahar)
+
+
+# total = 0
+# a = ()
+# for i in range(0, 11):
+#     if i % 2 == 0:
+#         a += (i,)
+#         total += i
+# print(a)
+# print(total)
+
+
+# def get_even_numbers(n1, n2):
+#     even_numbers = ()
+#     total = 0
+#     for i in range(n1, n2):
+#         if i % 2 == 0:
+#             even_numbers += (i,)
+#     for i in even_numbers:
+#         total += i
+#     return total
+#
+# print(get_even_numbers(0,11))
+
+# sahar, y, ekin = 1, 1567, "hello"
+# print(sahar, y, ekin)
+
+
+# def findExtremeDivisors(n1, n2):
+#     minVal, maxVal = None, None
+#     for i in range(2, min(n1, n2) + 1):
+#         if n1 % i == 0 and n2 % i == 0:
+#             if minVal is None or i < minVal:
+#                 minVal = i
+#                 print("minval is", minVal)
+#             if maxVal is None or i > maxVal:
+#                 maxVal = i
+#                 print("maxval is", maxVal)
+#
+#     return (minVal, maxVal)
+#
+# minDivisor, maxDivisor = findExtremeDivisors(10, 20)
+# print(minDivisor, maxDivisor)
+#
+#
+#
+# #Easier way
+# def find_common_divisors(n1, n2):
+#     result = ()
+#     for i in range(2, min(n1, n2) + 1):
+#         if n1 % i == 0 and n2 % i == 0:
+#             result += (i,)
+#     minCommon = min(result)
+#     maxCommon = max(result)
+#     return minCommon, maxCommon
+#
+# print(find_common_divisors(10, 50))
+
+#
+# s = [1, 123, 4.67, "hello world"]
+# for i in s:
+#     print(i)
+
+
+# sahar = ["my name", "is"]
+# ekin = ["sahari", "mahari"]
+# love = [sahar, ekin]
+# life = [sahar, ekin]
+# print("love is", love)
+# print("life is", life)
+# print(id(sahar), id(ekin))
+# sahar.extend("sahariri")
+# print(sahar)
+# for u in love:
+#     print("love contains", u)
+#     print("which contains ")
+#     for e in u:
+#         print(e)
+
+
+# a = [1, 2, 3, 4]
+# b = [1, 2, 5, 6]
+# def removeDups(a, b):
+#     """Assumes that L1 and L2 are lists.
+#     Removes any element from L1 that also occurs in L2"""
+#     for i in a[:]:
+#         print(a.index(i))
+#         if i in b:
+#             a.remove(i)
+#     return a
+# print(removeDups(a, b))
+
+
+# a = [ x ** 2 for x in range(0, 7) ]
+# print(a)
+
+# a = ("a", 1.23, "hello")
+# s = [1, 123, 4.67, "hello world"]
+# h = "   my    "
+# s = "sahar loves to play for quiddich"
+# print(s.split(" "))
+
+
+#
+# def applyToEach(L, f):
+#     """Assumes L is a list, f a function
+#     Mutates L by replacing each element, e, of L by f(e)"""
+#     for i in range(len(L)):
+#         L[i] = f(L[i])
+#
+# L = [1, -2, 3.33]
+# print('L =', L)
+# print('Apply abs to each element of L.')
+# applyToEach(L, abs)
+# print('L =', L)
+# print('Apply int to each element of', L)
+# applyToEach(L, int)
+# print('L =', L)
+
+
+#
+# a = [1, 4, 6]
+# b = [-3, 6, 89.9]
+# print(list(map(abs, b)))
+
+
+# monthNumbers = {'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5,
+#                 1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May'}
+#
+# print("the third month is :", monthNumbers[3])
+# dist = abs(monthNumbers['Jan'] - monthNumbers['Apr'])
+# print(monthNumbers[1],"and",monthNumbers[4],"are",dist,"months apart")
+# print(monthNumbers.values())
+#
+# months = {'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5}
+# keys = []
+# for e in months:
+#     keys.append(e)
+# print(keys)
+# keys.sort() # works with Python 2
+
+# keys = [e for e in monthNumbers] # list comprehension
+
+
+EtoF = {'bread': 'pain', 'wine': 'vin', 'with': 'avec', 'I': 'Je',
+        'eat': 'mange', 'drink': 'bois', 'John': 'Jean',
+        'friends': 'amis', 'and': 'et', 'of': 'du', 'red': 'rouge'}
+FtoE = {'pain': 'bread', 'vin': 'wine', 'avec': 'with', 'Je': 'I',
+        'mange': 'eat', 'bois': 'drink', 'Jean': 'John',
+        'amis': 'friends', 'et': 'and', 'du': 'of', 'rouge': 'red'}
+dicts = {'English to French': EtoF, 'French to English': FtoE}
+
+
+def translateWord(word, dictionary):
+    if type(word) != str:
+        word = str("word")
+    if word in dictionary.keys():
+        return dictionary[word]
+
+print(translateWord("pain", FtoE))
 
 
 
+def translate(phrase, dicbook, direction):
+    UCLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    LCLetters = 'abcdefghijklmnopqrstuvwxyz'
+    letters = UCLetters + LCLetters
+    dictionary = dicbook[direction]
+    translation = ''
+    word = ''
+    for c in phrase:
+        if c in letters:
+            word = word + c
+        else:
+            translation = translation + translateWord(word, dictionary) + c
+            word =  ''
+    return translation + ' ' + translateWord(word, dictionary)
+print(translate('I drink good red wine, and eat bread.',dicts,'English to French'))
+print(translate('Je bois du vin rouge.',dicts, 'French to English')
