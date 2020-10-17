@@ -235,4 +235,7 @@ dmypy.json
 # problem set files
 .ps0/
 
+# problet set helper files
+.words.txt/
+
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm

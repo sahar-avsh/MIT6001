@@ -996,9 +996,12 @@
 # b = [-3, 6, 89.9]
 # print(list(map(abs, b)))
 
+# flight1 = (111, "1st of October")
+# flight2 = (112, "2nd of October")
+# monthNumbers = {flight1:"12pm", flight2:'1pm'}
+# print(monthNumbers[flight1])
 
-# monthNumbers = {'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5,
-#                 1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May'}
+
 #
 # print("the third month is :", monthNumbers[3])
 # dist = abs(monthNumbers['Jan'] - monthNumbers['Apr'])
@@ -1013,40 +1016,162 @@
 # keys.sort() # works with Python 2
 
 # keys = [e for e in monthNumbers] # list comprehension
+#
+#
+# EtoF = {'bread': 'pain', 'wine': 'vin', 'with': 'avec', 'I': 'Je',
+#         'eat': 'mange', 'drink': 'bois', 'John': 'Jean',
+#         'friends': 'amis', 'and': 'et', 'of': 'du', 'red': 'rouge'}
+# FtoE = {'pain': 'bread', 'vin': 'wine', 'avec': 'with', 'Je': 'I',
+#         'mange': 'eat', 'bois': 'drink', 'Jean': 'John',
+#         'amis': 'friends', 'et': 'and', 'du': 'of', 'rouge': 'red'}
+# dicts = {'English to French': EtoF, 'French to English': FtoE}
+# 
+#
+# def translateWord(word, dictionary):
+#
+#     if word in dictionary.keys():
+#         return dictionary[word]
+#     elif word != "":
+#         return '"' + word + '"'
+#     return word
+#
+#
+# print(translateWord("pain", FtoE))
+#
+#
+# def translate(phrase, direction):
+#     UCLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#     LCLetters = 'abcdefghijklmnopqrstuvwxyz'
+#     letters = UCLetters + LCLetters
+#     dictionary = direction
+#     translation = ''
+#     word = ''
+#     for c in phrase:
+#         if c in letters:
+#             word += c
+#         else:
+#             translation += translateWord(word, dictionary) + c
+#             word = ''
+#     return translation
+#
+#
+# print(translate('Je bois du vin rouge.', FtoE))
+# print(translate('I drink good red wine, with red meat.', EtoF))
 
 
-EtoF = {'bread': 'pain', 'wine': 'vin', 'with': 'avec', 'I': 'Je',
-        'eat': 'mange', 'drink': 'bois', 'John': 'Jean',
-        'friends': 'amis', 'and': 'et', 'of': 'du', 'red': 'rouge'}
-FtoE = {'pain': 'bread', 'vin': 'wine', 'avec': 'with', 'Je': 'I',
-        'mange': 'eat', 'bois': 'drink', 'Jean': 'John',
-        'amis': 'friends', 'et': 'and', 'du': 'of', 'rouge': 'red'}
-dicts = {'English to French': EtoF, 'French to English': FtoE}
+# example for tuple inside the tuple
+# bigT = ((1, "a"), (2, "a"), (3, "c"))
+#
+#
+# def add(aTupleName):
+#     numbers = ()
+#     words = ()
+#     for i in aTupleName:
+#         if i[0] not in numbers:
+#             numbers += (i[0],)
+#         if i[1] not in words:
+#             words += (i[1],)
+#     result = (min(numbers), min(words))
+#     return result
+# print(add(bigT))
 
 
-def translateWord(word, dictionary):
-    if type(word) != str:
-        word = str("word")
-    if word in dictionary.keys():
-        return dictionary[word]
+# a = "helloWorld"
+# print(list(a))
+# print(a.split("e"))
+#
+# b = ["p", "b", "c"]
+# k = b.sort()
+# print(sorted(b))
+# print(b)
+# print("".join(b))
+# print('_'.join(b))
+# print('yello'.join(b))
 
-print(translateWord("pain", FtoE))
+
+# recursion
+
+
+# def factR(n):
+#     if n == 1:
+#         return n
+#     else:
+#         return n * factR(n - 1)
+
+#
+#
+# fibonnaci
+# def fib(n):
+#     if n == 0 or n == 1:
+#         print(n)
+#         return 1
+#     else:
+#         print(n)
+#         return fib(n - 1) + fib(n - 2)
+# print(fib(3))
+#
+#
+# def char(s):
+#     s = s.lower()
+#     letters = ''
+#     for c in s:
+#         if c in 'abcdefghijklmnopqrstuvwxyz':
+#             letters = letters + c
+#     return letters
+#
+# def isPal(s):
+#     if len(s) <= 1:
+#         return True
+#     else:
+#         print(s)
+#         return s[0] == s[-1] and isPal(s[1:-1])
+# print(isPal(char("madam")))
+
+
+# lyrics = ["baby", "baby", "I", "love", "love", "much", "much", "much", "baby"]
+# def frequency(poem):
+#     myDict = {}
+#     for word in poem:
+#         if word not in myDict.keys():
+#             myDict[word] = 1
+#         else:
+#             myDict[word] += 1
+#     return myDict
+#
+# def most_common(song):
+#     most_repeated_words = {}
+#     frequency_dicts = frequency(song)
+#     most_repeated_value = max(frequency_dicts.values())
+#     for j in frequency_dicts:
+#         if frequency_dicts[j] == most_repeated_value:
+#             most_repeated_words[j] = most_repeated_value
+#     return most_repeated_words
+#
+#
+# def xTimes(music, minTimes):
+#     theList = {}
+#     for i in music:
+#         if music[i] >= minTimes:
+#             theList[i] = music[i]
+#     return theList
+#
+# print(xTimes(frequency(lyrics), 2))
+
+
+#newfibonnaci
+empty = {}
+myList = {1:1, 2:2, 3:3}
+
+
+def fib(n, annbgh):
+    if n in annbgh:
+        return annbgh[n]
+    else:
+        answer = fib(n - 1, annbgh) + fib(n - 2, annbgh)
+        return answer
+
+
+print(fib(4, myList))
 
 
 
-def translate(phrase, dicbook, direction):
-    UCLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    LCLetters = 'abcdefghijklmnopqrstuvwxyz'
-    letters = UCLetters + LCLetters
-    dictionary = dicbook[direction]
-    translation = ''
-    word = ''
-    for c in phrase:
-        if c in letters:
-            word = word + c
-        else:
-            translation = translation + translateWord(word, dictionary) + c
-            word =  ''
-    return translation + ' ' + translateWord(word, dictionary)
-print(translate('I drink good red wine, and eat bread.',dicts,'English to French'))
-print(translate('Je bois du vin rouge.',dicts, 'French to English')
